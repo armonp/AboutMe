@@ -6,7 +6,8 @@
   background-color: var(--color-secondary);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  text-align: center;
   width: 100vw;
   padding: 58px 10%;
   gap: 10px;
@@ -26,10 +27,9 @@
 
 .links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   list-style: none;
   gap: 26px;
+  justify-content: center;
 }
 
 .link {

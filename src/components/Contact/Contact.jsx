@@ -9,26 +9,34 @@ export const Contact = () => {
       <div className={styles.text}>
         <h2>Contact</h2>
         <p>Feel free to reach out!</p>
+        <ul className={styles.links}>
+          <li className={styles.link}>
+            <a href="mailto:armon.porter@gmail.com">
+              <img
+                src={getImageUrl("contact/emailIcon.png")}
+                alt="Email icon"
+              />
+            </a>
+          </li>
+          <li className={styles.link}>
+            <a href="https://www.linkedin.com/in/armon-porter">
+              {" "}
+              <img
+                src={getImageUrl("contact/linkedinIcon.png")}
+                alt="LinkedIn icon"
+              />
+            </a>
+          </li>
+          <li className={styles.link}>
+            <a href="https://www.github.com/armonp">
+              <img
+                src={getImageUrl("contact/githubIcon.png")}
+                alt="Github icon"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
-      <ul className={styles.links}>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/emailIcon.png")} alt="Email icon" />
-          <a href="mailto:armon.porter@gmail.com">armon.porter@gmail.com</a>
-        </li>
-        <li className={styles.link}>
-          <img
-            src={getImageUrl("contact/linkedinIcon.png")}
-            alt="LinkedIn icon"
-          />
-          <a href="https://www.linkedin.com/in/armon-porter">
-            linkedin.com/in/armon-porter
-          </a>
-        </li>
-        <li className={styles.link}>
-          <img src={getImageUrl("contact/githubIcon.png")} alt="Github icon" />
-          <a href="https://www.github.com/armonp">github.com/armonp</a>
-        </li>
-      </ul>
     </footer>
   );
 };
