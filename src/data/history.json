@@ -1,0 +1,21 @@
+[
+  {
+    "role": "Software Developer",
+    "organization": "Insight Enterprises",
+    "startDate": "March, 2022",
+    "endDate": "Present",
+    "experiences": ["Kroger Technology"],
+    "imageSrc": "history/insight.png"
+  },
+  {
+    "role": "Software Developer",
+    "organization": "Ascendum Solutions",
+    "startDate": "April, 2020",
+    "endDate": "Feb, 2022",
+    "experiences": [
+      "Sydney Communities API",
+      "FootLocker Reservation System and CMS"
+    ],
+    "imageSrc": "history/ascendum.png"
+  }
+]
