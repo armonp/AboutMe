@@ -5,36 +5,52 @@ import { getImageUrl } from "../../utils";
 
 export const Contact = () => {
   return (
-    <footer id="contact" className={styles.container}>
+    <footer id="contact" className={styles.container} role="contentinfo">
       <div className={styles.text}>
         <h2>Contact</h2>
         <p>Feel free to reach out!</p>
-        <ul className={styles.links}>
+        <ul
+          className={styles.links}
+          role="list"
+          aria-label="Contact information and social media links"
+        >
           <li className={styles.link}>
             <a
               href="mailto:armon.porter@gmail.com"
-              title="Email: armon.porter@gmail.com"
+              aria-label="Send email to Armon Porter at armon.porter@gmail.com"
             >
               <img
                 src={getImageUrl("contact/emailIcon.png")}
-                alt="Email icon"
+                alt=""
+                aria-hidden="true"
               />
             </a>
           </li>
           <li className={styles.link}>
-            <a href="https://www.linkedin.com/in/armon-porter" title="LinkedIn">
-              {" "}
+            <a
+              href="https://www.linkedin.com/in/armon-porter"
+              aria-label="Visit Armon Porter's LinkedIn profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={getImageUrl("contact/linkedinIcon.png")}
-                alt="LinkedIn icon"
+                alt=""
+                aria-hidden="true"
               />
             </a>
           </li>
           <li className={styles.link}>
-            <a href="https://www.github.com/armonp" title="Github.com/armonp">
+            <a
+              href="https://www.github.com/armonp"
+              aria-label="Visit Armon Porter's GitHub profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <img
                 src={getImageUrl("contact/githubIcon.png")}
-                alt="Github icon"
+                alt=""
+                aria-hidden="true"
               />
             </a>
           </li>
