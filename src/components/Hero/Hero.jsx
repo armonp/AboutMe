@@ -6,25 +6,62 @@ export const Hero = () => {
   return (
     <section className={styles.container} aria-labelledby="hero-title">
       <div className={styles.content}>
+        <div className={styles.greeting}>
+          <span className={styles.greetingText}>Hi, I'm</span>
+        </div>
         <h1 id="hero-title" className={styles.title}>
-          Hi, I'm Armon
+          <span className={styles.firstName}>Armon</span>
+          <span className={styles.lastName}>Porter</span>
         </h1>
+        <div className={styles.subtitle}>
+          <span className={styles.role}>Full Stack Developer</span>
+          <span className={styles.specialization}>
+            Building digital experiences with modern technologies
+          </span>
+        </div>
         <p className={styles.description}>
-          I am a full stack developer. Reach out if you'd like to learn more
+          Passionate about creating scalable web applications and solving
+          complex problems through elegant code. Let's build something amazing
+          together.
         </p>
-        <a
-          className={styles.contactBtn}
-          href="mailto:armon.porter@gmail.com"
-          aria-label="Send email to armon.porter@gmail.com"
-        >
-          Contact me
-        </a>
+        <div className={styles.actions}>
+          <a
+            className={styles.primaryBtn}
+            href="mailto:armon.porter@gmail.com"
+            aria-label="Send email to armon.porter@gmail.com"
+          >
+            <span>Get In Touch</span>
+            <svg
+              className={styles.btnIcon}
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 17L17 7M17 7H7M17 7V17"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </a>
+          <a
+            className={styles.secondaryBtn}
+            href="#projects"
+            aria-label="View my projects"
+          >
+            View My Work
+          </a>
+        </div>
       </div>
-      <img
-        className={styles.heroImg}
-        src={getImageUrl("hero/heroImage.png")}
-        alt="Professional headshot of Armon Porter, full stack developer"
-      />
+      <div className={styles.imageWrapper}>
+        <img
+          className={styles.heroImg}
+          src={getImageUrl("hero/heroImage.png")}
+          alt="Professional headshot of Armon Porter, full stack developer"
+        />
+      </div>
       <div className={styles.topBlur} aria-hidden="true" />
       <div className={styles.bottomBlur} aria-hidden="true" />
     </section>

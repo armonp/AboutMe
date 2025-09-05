@@ -4,8 +4,13 @@
   color: var(--color-text);
   margin-top: var(--section-spacing);
   background-color: var(--color-secondary);
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "header"
+    "content"
+    "links";
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -14,14 +19,17 @@
   gap: var(--space-lg);
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: var(--space-xl) var(--container-padding-mobile);
-    gap: var(--space-md);
-  }
+.text {
+  grid-area: header;
+  display: grid;
+  grid-template-areas: 
+    "title"
+    "subtitle";
+  gap: var(--space-md);
 }
 
 .text h2 {
+  grid-area: title;
   font-size: var(--text-6xl);
   font-weight: var(--font-bold);
   font-family: var(--font-outfit);
@@ -30,6 +38,7 @@
 }
 
 .text p {
+  grid-area: subtitle;
   font-size: var(--text-4xl);
   font-weight: var(--font-normal);
   font-family: var(--font-outfit);
@@ -38,16 +47,36 @@
 }
 
 .links {
-  display: flex;
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "email linkedin github";
   list-style: none;
   gap: var(--space-lg);
   justify-content: center;
-  flex-wrap: wrap;
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
 }
 
+.links li:nth-child(1) { grid-area: email; }
+.links li:nth-child(2) { grid-area: linkedin; }
+.links li:nth-child(3) { grid-area: github; }
+
 @media (max-width: 768px) {
-  .links {
+  .container {
+    padding: var(--space-xl) var(--container-padding-mobile);
     gap: var(--space-md);
+  }
+  
+  .links {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "email"
+      "linkedin"
+      "github";
+    gap: var(--space-md);
+    max-width: 200px;
   }
 }
 

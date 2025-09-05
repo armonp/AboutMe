@@ -25,28 +25,102 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "skills-title"
+    "skills"
+    "history";
   gap: var(--space-2xl);
   margin-top: var(--space-xl);
 }
 
-@media (max-width: 768px) {
-  .content {
-    grid-template-columns: 1fr;
-    gap: var(--space-xl);
-  }
+.skillsTitle {
+  grid-area: skills-title;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.skillsTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgba(25, 109, 38, 0.5) 100%
+  );
+  border-radius: 2px;
 }
 
 .skills {
+  grid-area: skills;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: var(--space-lg);
+  grid-template-areas: 
+    "react    node     html     css"
+    "mongodb  azure    gcp      .";
+  align-items: center;
+  justify-items: center;
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
+/* Individual skill positioning with semantic naming */
+.skill:nth-child(1) { grid-area: react; }    /* React */
+.skill:nth-child(2) { grid-area: node; }     /* Node.js */
+.skill:nth-child(3) { grid-area: html; }     /* HTML */
+.skill:nth-child(4) { grid-area: css; }      /* CSS */
+.skill:nth-child(5) { grid-area: mongodb; }  /* MongoDB */
+.skill:nth-child(6) { grid-area: azure; }    /* Azure */
+.skill:nth-child(7) { grid-area: gcp; }      /* Google Cloud */
+
 @media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "skills-title"
+      "skills"
+      "history";
+    gap: var(--space-xl);
+  }
+  
   .skills {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+      "react    node"
+      "html     css"
+      "mongodb  azure"
+      "gcp      .";
     gap: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "react"
+      "node"
+      "html"
+      "css"
+      "mongodb"
+      "azure"
+      "gcp";
+    gap: var(--space-sm);
   }
 }
 
@@ -54,34 +128,128 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 11px;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(25, 109, 38, 0.1) 0%,
+    transparent 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skill:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(25, 109, 38, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 4px 16px rgba(25, 109, 38, 0.1);
+}
+
+.skill:hover::before {
+  opacity: 1;
 }
 
 .skillImageContainer {
-  background-color: var(--color-secondary);
-  border-radius: 100%;
+  background: linear-gradient(
+    135deg,
+    var(--color-secondary) 0%,
+    rgba(25, 109, 38, 0.1) 100%
+  );
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 120px;
-  height: 120px;
+  width: 80px;
+  height: 80px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skillImageContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    transparent,
+    rgba(25, 109, 38, 0.2),
+    transparent
+  );
+  animation: rotate 8s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill:hover .skillImageContainer::before {
+  opacity: 1;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .skillImageContainer img {
-  width: 75px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.skill:hover .skillImageContainer img {
+  transform: scale(1.1);
 }
 
 .skill p {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-family: var(--font-outfit);
   font-weight: var(--font-medium);
   line-height: var(--leading-normal);
+  color: var(--color-text);
+  text-align: center;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.skill:hover p {
+  color: var(--color-primary);
 }
 
 .history {
+  grid-area: history;
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .historyItem {
