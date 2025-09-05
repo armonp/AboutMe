@@ -10,14 +10,9 @@
     "category": "Backend"
   },
   {
-    "title": "HTML",
-    "imageSrc": "skills/html.png",
-    "category": "Frontend"
-  },
-  {
-    "title": "CSS",
-    "imageSrc": "skills/css.png",
-    "category": "Frontend"
+    "title": "C#",
+    "imageSrc": "skills/csharp.png",
+    "category": "Backend"
   },
   {
     "title": "MongoDB",
@@ -32,6 +27,11 @@
   {
     "title": "Google Cloud",
     "imageSrc": "skills/gcp.png",
+    "category": "Cloud"
+  },
+  {
+    "title": "AWS",
+    "imageSrc": "skills/aws.png",
     "category": "Cloud"
   }
 ]
