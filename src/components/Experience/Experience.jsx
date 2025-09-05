@@ -10,11 +10,8 @@ export const Experience = () => {
     <section
       className={styles.container}
       id="experience"
-      aria-labelledby="experience-title"
+      aria-labelledby="skills-heading"
     >
-      <h2 id="experience-title" className={styles.title}>
-        Experience
-      </h2>
       <div className={styles.content}>
         <h3 className={styles.skillsTitle}>Technical Skills</h3>
 
@@ -31,6 +28,8 @@ export const Experience = () => {
             </div>
           ))}
         </div>
+
+        <h3 className={styles.historyTitle}>Work History</h3>
 
         <ul className={styles.history}>
           {history.map((historyItem, id) => {

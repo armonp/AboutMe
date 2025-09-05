@@ -1,9 +1,16 @@
 [
   {
     "role": "Software Developer",
+    "organization": "Divisions Maintenance Group (DMG)",
+    "startDate": "Nov, 2024",
+    "endDate": "Present",
+    "experiences": ["DMG Provider Supply"]
+  },
+  {
+    "role": "Software Developer",
     "organization": "Insight Enterprises",
     "startDate": "March, 2022",
-    "endDate": "Present",
+    "endDate": "Aug, 2024",
     "experiences": ["Kroger Technology"],
     "imageSrc": "history/insight.png"
   },

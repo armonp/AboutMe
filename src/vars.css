@@ -48,7 +48,7 @@
 
     /* Layout spacing */
     --container-padding: 10%;
-    --section-spacing: var(--space-4xl);
+    --section-spacing: var(--space-2xl);
     --card-padding: var(--space-2xl);
     --item-gap: var(--space-lg);
 
@@ -64,4 +64,11 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 1024px;
     --breakpoint-xl: 1280px;
+}
+
+/* Mobile responsive spacing */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: var(--space-2xl);
+    }
 }

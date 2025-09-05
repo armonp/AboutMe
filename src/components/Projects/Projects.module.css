@@ -10,6 +10,7 @@
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--container-padding-mobile);
+    text-align: center;
   }
 }
 
@@ -19,7 +20,35 @@
   font-family: var(--font-outfit);
   line-height: var(--leading-tight);
   letter-spacing: 1.75px;
-  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  color: var(--color-text);
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgba(25, 109, 38, 0.5) 100%
+  );
+  border-radius: 2px;
+}
+
+.container p {
+  text-align: center;
+  font-size: var(--text-xl);
+  font-family: var(--font-outfit);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--space-xl);
 }
 
 .projects {

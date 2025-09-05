@@ -10,6 +10,7 @@
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--container-padding-mobile);
+    text-align: center;
   }
 }
 
@@ -29,6 +30,7 @@
   grid-template-areas: 
     "skills-title"
     "skills"
+    "history-title"
     "history";
   gap: var(--space-2xl);
   margin-top: var(--space-xl);
@@ -46,6 +48,33 @@
 }
 
 .skillsTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 0%,
+    rgba(25, 109, 38, 0.5) 100%
+  );
+  border-radius: 2px;
+}
+
+.historyTitle {
+  grid-area: history-title;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.historyTitle::after {
   content: '';
   position: absolute;
   bottom: 0;
