@@ -5,14 +5,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 61px;
+    max-width: var(--container-wide-max-width);
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--container-padding-x) 0;
     z-index: 2;
-    margin: 0 10%;    
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: var(--space-lg) var(--container-padding-mobile) 0;
+    }
 }
 
 .title {
-    font-size: 30px;
-    font-weight: 600;
+    font-size: var(--text-3xl);
+    font-weight: var(--font-semibold);
+    font-family: var(--font-outfit);
     text-decoration: none;
     color: var(--color-text);
 }
@@ -28,14 +36,17 @@
 
 .menuItems {
     display: flex;
-    gap: 47px;
+    gap: var(--space-xl);
     list-style: none;
 }
 
 .menuItems a {
-    font-size: 25px;
+    font-size: var(--text-xl);
+    font-weight: var(--font-medium);
+    font-family: var(--font-outfit);
     color: var(--color-text);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 @media screen and (max-width: 830px) {

@@ -2,48 +2,69 @@
 
 .container {
   color: var(--color-text);
-  margin-top: 120px;
+  margin-top: var(--section-spacing);
   background-color: var(--color-secondary);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  width: 100vw;
-  padding: 58px 10%;
-  gap: 10px;
+  width: 100%;
+  padding: var(--space-2xl) var(--container-padding-x);
+  gap: var(--space-lg);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: var(--space-xl) var(--container-padding-mobile);
+    gap: var(--space-md);
+  }
 }
 
 .text h2 {
-  font-size: 80px;
-  font-weight: 700;
+  font-size: var(--text-6xl);
+  font-weight: var(--font-bold);
+  font-family: var(--font-outfit);
+  line-height: var(--leading-tight);
   letter-spacing: 4px;
 }
 
 .text p {
-  font-size: 40px;
-  font-weight: 400;
+  font-size: var(--text-4xl);
+  font-weight: var(--font-normal);
+  font-family: var(--font-outfit);
+  line-height: var(--leading-normal);
   letter-spacing: 2px;
 }
 
 .links {
   display: flex;
   list-style: none;
-  gap: 26px;
+  gap: var(--space-lg);
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .links {
+    gap: var(--space-md);
+  }
 }
 
 .link {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: var(--space-md);
 }
 
 .link a {
   color: var(--color-text);
   text-decoration: none;
-  font-size: 30px;
-  font-weight: 400;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-normal);
+  font-family: var(--font-outfit);
   letter-spacing: 1.5px;
+  transition: color 0.2s ease;
 }
 
 @media screen and (max-width: 830px) {

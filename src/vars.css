@@ -8,5 +8,60 @@
 
     /* Fonts */
     --font-roboto: "Roboto";
+    --font-outfit: "Outfit", "Arial", "Helvetica", sans-serif;
 
+    /* Typography Scale - 1.25x ratio (Major Third) */
+    --text-xs: 0.75rem;    /* 12px */
+    --text-sm: 0.875rem;   /* 14px */
+    --text-base: 1rem;     /* 16px - base size */
+    --text-lg: 1.125rem;   /* 18px */
+    --text-xl: 1.25rem;    /* 20px */
+    --text-2xl: 1.5rem;    /* 24px */
+    --text-3xl: 1.875rem;  /* 30px */
+    --text-4xl: 2.25rem;   /* 36px */
+    --text-5xl: 3rem;      /* 48px */
+    --text-6xl: 3.75rem;   /* 60px */
+    --text-7xl: 4.5rem;    /* 72px */
+
+    /* Line Heights */
+    --leading-tight: 1.2;   /* For headings */
+    --leading-normal: 1.4;  /* For body text */
+    --leading-relaxed: 1.6; /* For large text blocks */
+
+    /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-black: 900;
+
+    /* Spacing Scale - 8px base unit */
+    --space-xs: 0.5rem;   /* 8px */
+    --space-sm: 1rem;     /* 16px */
+    --space-md: 1.5rem;   /* 24px */
+    --space-lg: 2rem;     /* 32px */
+    --space-xl: 3rem;     /* 48px */
+    --space-2xl: 4rem;    /* 64px */
+    --space-3xl: 6rem;    /* 96px */
+    --space-4xl: 8rem;    /* 128px */
+
+    /* Layout spacing */
+    --container-padding: 10%;
+    --section-spacing: var(--space-4xl);
+    --card-padding: var(--space-2xl);
+    --item-gap: var(--space-lg);
+
+    /* Container System */
+    --container-max-width: 1200px;
+    --container-wide-max-width: 1400px;
+    --container-narrow-max-width: 800px;
+    --container-padding-x: var(--space-lg);
+    --container-padding-mobile: var(--space-md);
+
+    /* Responsive Breakpoints */
+    --breakpoint-sm: 640px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1024px;
+    --breakpoint-xl: 1280px;
 }

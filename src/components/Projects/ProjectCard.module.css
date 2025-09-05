@@ -6,28 +6,34 @@
   border-radius: 10px;
   background: linear-gradient(180deg, #57bc5e 0%, #13531d 100%);
   box-shadow: 0 16px 14px 0 #042d0a;
-  padding: 18px 24px;
-  max-width: 345px;
+  padding: var(--space-lg) var(--space-md);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .image {
-  margin-bottom: 26px;
+  margin-bottom: var(--space-md);
 }
 
 .title {
-  font-size: 25px;
-  font-weight: 700;
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  font-family: var(--font-outfit);
+  line-height: var(--leading-tight);
 }
 
 .description {
-  margin-top: 6px;
-  font-size: 25px;
-  font-weight: 400;
+  margin-top: var(--space-xs);
+  font-size: var(--text-base);
+  font-weight: var(--font-normal);
+  font-family: var(--font-outfit);
+  line-height: var(--leading-normal);
 }
 
 .skills {
   width: 100%;
-  margin-top: 14px;
+  margin-top: var(--space-sm);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -36,16 +42,17 @@
 }
 
 .skill {
-  font-size: 25px;
-  font-weight: 400;
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  font-family: var(--font-outfit);
   border-radius: 100px;
   background: var(--color-dark);
-  padding: 2px 22px;
+  padding: var(--space-xs) var(--space-md);
 }
 
 .links {
   width: 100%;
-  margin-top: 26px;
+  margin-top: var(--space-md);
   display: flex;
   justify-content: space-around;
 }
@@ -53,9 +60,11 @@
 .link {
   text-decoration: none;
   color: var(--color-text);
-  font-size: 30px;
-  font-weight: 600;
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  font-family: var(--font-outfit);
   border-radius: 100px;
   background: var(--color-primary);
-  padding: 1px 22px;
+  padding: var(--space-xs) var(--space-md);
+  transition: all 0.2s ease;
 }
